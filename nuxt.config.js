@@ -1,3 +1,6 @@
+require('dotenv').config();
+const { MICRO_CMS_API } = process.env;
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -42,5 +45,8 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  env: {
+    MICRO_CMS_API
   }
 }

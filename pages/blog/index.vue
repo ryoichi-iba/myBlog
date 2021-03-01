@@ -13,9 +13,9 @@
 <script>
 import axios from "axios";
 export default {
-  // mounted() {
-  //   console.log(process.env.MICRO_CMS_API);
-  // },
+  mounted() {
+    console.log(process.env.MICRO_CMS_API);
+  },
 
   async asyncData() {
     const { data } = await axios.get(

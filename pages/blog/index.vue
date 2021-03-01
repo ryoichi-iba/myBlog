@@ -13,10 +13,6 @@
 <script>
 import axios from "axios";
 export default {
-  mounted() {
-    console.log(process.env.MICRO_CMS_API);
-  },
-
   async asyncData() {
     const { data } = await axios.get(
       // 5-2でメモしたURLを記載しましょう。
@@ -28,7 +24,6 @@ export default {
     );
     return data;
   }
-  
 };
 </script>
 <style></style>

@@ -2,10 +2,14 @@
   <div class="container">
     <div>
       <h1 class="title">
-        suzukazu ブログ
+        suzukazuブログ
       </h1>
       <nuxt-link :to="`/blog`">
         ブログ
+      </nuxt-link>
+      |
+      <nuxt-link :to="`/about`">
+        アバウト
       </nuxt-link>
     </div>
   </div>

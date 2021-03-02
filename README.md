@@ -1,4 +1,4 @@
-# myBlog
+# Nuxt.js × Netlify × MicroCMS　でサイト構築
 
 ## Build Setup
 
@@ -18,4 +18,4 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
-# myBlog
+

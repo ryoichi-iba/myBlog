@@ -11,7 +11,14 @@
   "dependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
     "axios": "^0.21.1",
+    "bootstrap-vue": "^2.21.2",
     "core-js": "^3.8.3",
+    "node-sass": "^5.0.0",
     "nuxt": "^2.14.12"
+  },
+  "devDependencies": {
+    "fibers": "^5.0.0",
+    "sass": "^1.32.8",
+    "sass-loader": "^10.1.1"
   }
 }

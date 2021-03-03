@@ -1,5 +1,7 @@
 # Nuxt.js × Netlify × MicroCMS　でサイト構築
 
+https://suzukazu.tk
+
 ## Build Setup
 
 ```bash

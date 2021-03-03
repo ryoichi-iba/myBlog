@@ -7,10 +7,10 @@
             {{ content.title }}
           </div>
         </h1>
-        <div class="post-date">
-          {{ content.date }}
-        </div>
       </nuxt-link>
+        <p class="post-date">
+          {{ content.date }}
+        </p>
     </div>
   </main>
 </template>
@@ -56,7 +56,7 @@
   .post-head {
     font-size: 1.5rem;
     margin-top: 20px;
-    margin-bottom: 7px;
+    margin-bottom: 4px;
     font-weight: bold;
 
       &:hover {

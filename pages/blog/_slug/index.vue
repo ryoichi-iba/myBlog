@@ -1,8 +1,8 @@
 <template>
   <main>
-    <h1>{{ title }}</h1>
-    <p>{{ date }}</p>
-    <div v-html="contents"></div>
+    <h2 class="post_title">{{ title }}</h2>
+    <p class="post_date">{{ dateFormat(date) }}</p>
+    <div v-html="contents" class="post_content"></div>
   </main>
 </template>
 
@@ -10,6 +10,11 @@
 import axios from 'axios'
 
 export default {
+  methods: {
+      dateFormat(dateString) {
+          return this.$dateformat(new Date(dateString), 'yyyy-mm-dd');
+      }
+    },
   async asyncData({ params }) {
     const { data } = await axios.get(
       `https://suzukazu-blog.microcms.io/api/v1/blog/${params.slug}`,
@@ -21,3 +26,20 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .post_title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  .post_date {
+    margin: 5px 0;
+  }
+
+  .post_content {
+    margin: 20px 0;
+    font-size: 1.1rem;
+  }
+</style>

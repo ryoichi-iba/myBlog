@@ -59,7 +59,7 @@
   }
 
   .post-head {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-top: 20px;
     margin-bottom: 4px;
     font-weight: bold;

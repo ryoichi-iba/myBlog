@@ -1,63 +1,78 @@
 <template>
-  <div class="container">
-    <div>
-      <h1 class="title">
-        suzukazuブログ
-      </h1>
-      <nuxt-link :to="`/blog`">
-        ブログ
-      </nuxt-link>
-      |
-      <nuxt-link :to="`/about`">
-        アバウト
+  <main>
+    <div class="" v-for="content in contents" :key="content.id">
+      <nuxt-link :to="`/blog/${content.id}`" class="post">
+        <h1 class="post-head">
+          <div class="post-head__title">
+            {{ content.title }}
+          </div>
+        </h1>
+        <div class="post-date">
+          {{ content.date }}
+        </div>
       </nuxt-link>
     </div>
-  </div>
+  </main>
 </template>
-
 <script>
-  export default {}
+  import axios from "axios";
+  export default {
+    async asyncData() {
+      const {
+        data
+      } = await axios.get(
+        // 5-2でメモしたURLを記載しましょう。
+        "https://suzukazu-blog.microcms.io/api/v1/blog", {
+          // 5-2でメモしたAPIキーを記載しましょう。
+          headers: {
+            "X-API-KEY": process.env.MICRO_CMS_API
+          }
+        }
+      );
+      return data;
+    }
+  };
 
 </script>
+<style lang="scss" scoped>
 
-<style>
-  .container {
-    margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    text-align: center;
+
+  a {
+    color: black;
+    &:hover {
+      opacity: 0.7;
+      text-decoration: none;
+    }
   }
 
-  .title {
-    font-family:
-      'Quicksand',
-      'Source Sans Pro',
-      -apple-system,
-      BlinkMacSystemFont,
-      'Segoe UI',
-      Roboto,
-      'Helvetica Neue',
-      Arial,
-      sans-serif;
-    display: block;
-    font-weight: 300;
-    font-size: 50px;
-    color: #35495e;
-    letter-spacing: 1px;
-    margin-top: 30px;
+  .post {
+    color: black;
+    &:hover {
+      opacity: 0.7;
+      text-decoration: none;
+    }
   }
 
-  .subtitle {
-    font-weight: 300;
-    font-size: 42px;
-    color: #526488;
-    word-spacing: 5px;
-    padding-bottom: 15px;
+  .post-head {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 7px;
+    font-weight: bold;
+
+      &:hover {
+          opacity: 0.7;
+          text-decoration: none;
+        }
+    &__title {
+      color: black;
+    }
   }
 
-  .links {
-    padding-top: 15px;
-  }
+  // .post-date {
+  //    &:hover {
+  //         opacity: 0.7;
+  //         text-decoration: none;
+  //       }
+  // }
 
 </style>

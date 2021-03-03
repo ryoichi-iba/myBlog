@@ -1,7 +1,8 @@
 <template>
   <main>
     <h2 class="post_title">{{ title }}</h2>
-    <p class="post_date">{{ dateFormat(date) }}</p>
+    <p class="post_date">Posted at  {{ dateFormat(date) }}</p>
+    <hr>
     <div v-html="contents" class="post_content"></div>
   </main>
 </template>
@@ -29,9 +30,9 @@ export default {
 
 <style lang="scss">
   .post_title {
-    font-size: 25px;
+    font-size: 27px;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 25px;
   }
 
   .post_date {
@@ -40,6 +41,6 @@ export default {
 
   .post_content {
     margin: 20px 0;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 </style>

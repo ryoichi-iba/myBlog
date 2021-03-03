@@ -2,7 +2,7 @@
   <div class="app-container">
     <header>
       <div class="site-title">
-        <div class="site-title__link">suzukazuブログ</div>
+        <nuxt-link to="/" class="site-title__link">suzukazuブログ</nuxt-link>
       </div>
     </header>
      <slot/>
@@ -28,6 +28,7 @@ export default {
   &__link {
     color: black;
     opacity: 1;
+    text-decoration: none;
   }
 }
 .site-description {

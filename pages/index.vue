@@ -9,7 +9,7 @@
         </h1>
       </nuxt-link>
         <p class="post-date">
-          {{ content.date }}
+          {{ dateFormat(content.date) }}
         </p>
     </div>
   </main>
@@ -17,6 +17,11 @@
 <script>
   import axios from "axios";
   export default {
+    methods: {
+      dateFormat(dateString) {
+          return this.$dateformat(new Date(dateString), 'yyyy-mm-dd');
+      }
+    },
     async asyncData() {
       const {
         data
